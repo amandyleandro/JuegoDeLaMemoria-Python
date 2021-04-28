@@ -1,5 +1,6 @@
 from src.windows import v_menu
 from src.component import configuraciones
+from src.component import c_game
 import PySimpleGUI as sg
 
 
@@ -20,5 +21,9 @@ def loop():
         if event == "-CONFIGURACIONES-":
             window.hide()
             configuraciones.start()
+            window.un_hide()
+        if event == "-JUGAR-":
+            window.hide()
+            c_game.start()
             window.un_hide()
     return window
