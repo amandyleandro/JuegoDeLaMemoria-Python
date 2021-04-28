@@ -26,7 +26,7 @@ def loop():
         if event == "-REGISTRARSE-" :
             window.hide()
             registrarse.start()
-            window.close()
+            window.un_hide()
 
         if event == "-ENTRAR_INVITADO-" :
             window.hide()   ### no esconder cerrarse
