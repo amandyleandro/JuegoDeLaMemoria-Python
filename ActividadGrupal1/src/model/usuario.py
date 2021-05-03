@@ -25,39 +25,37 @@ class usuario():
 
     def existeUsuario(self):
         try:
-            with open("archivos" + os.sep + "arc_usuarios.json", encoding="utf8") as arc_usuarios:
+            with open("arc_usuarios.json", encoding="utf8") as arc_usuarios:
                 data_usuarios = json.load(arc_usuarios)
         except:
-                data_usuarios= []
-        for aux in data_usuarios:
-            if self.username in aux:
-                user = usuario(
-                    self.username,
-                    aux[self.username]["password"],
-                    aux[self.username]["genero"],
-                    aux[self.username]["edad"],
-                    aux[self.username]["puntos"]
-                    )
-                return user
+                data_usuarios= {}
+        if self.username in data_usuarios:
+            user = usuario(
+                self.username,
+                data_usuarios[self.username]["password"],
+                data_usuarios[self.username]["genero"],
+                data_usuarios[self.username]["edad"],
+                data_usuarios[self.username]["puntos"]
+                )
+            return user
         return False
 
     def guardarUsuarioJson(self):
         try:
-            with open("archivos"+ os.sep +"arc_usuarios.json", encoding="utf8") as arc_usuarios:
+            with open("arc_usuarios.json", encoding="utf8") as arc_usuarios:
                 data_usuarios = json.load(arc_usuarios)
         except:
-                data_usuarios= []
+                data_usuarios= {}
 
-        with open("archivos"+ os.sep +"arc_usuarios.json", "w", encoding="utf8") as file:
-            data = {
-                self.username : {
+        with open("arc_usuarios.json", "w", encoding="utf8") as file:
+
+            data_usuarios[self.username] = {
                 "password" : self.password,
                 "genero" : self.genero,
                 "edad" : self.edad,
                 "puntos" : self.puntos,
                 }
-            }
-            data_usuarios.append(data)
+
             json.dump(data_usuarios,file, indent=4, ensure_ascii=False)
 
     def imprimir(self):

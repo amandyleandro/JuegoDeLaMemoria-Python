@@ -25,7 +25,7 @@ def loop():
                 if user.password == user2.password:
                     user = user2
                     window.close()
-                    c_menu.start(user)
+                    c_menu.start()
                 else:
                     sg.popup("La contraseña es incorrecta")
             else:
