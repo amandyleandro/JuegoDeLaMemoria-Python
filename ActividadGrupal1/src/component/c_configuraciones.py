@@ -1,4 +1,5 @@
 from src.windows import v_configuraciones
+import json
 import PySimpleGUI as sg
 
 
@@ -7,8 +8,15 @@ def start():
     window.close()
 
 def loop():
-    window = v_configuraciones.build()
 
+    configuraciones = {"textos":[],
+    "tiempo maximo": 120, 
+    "casillas": "8x8", 
+    "coincidencias": 2, 
+    "tipo de casillas": "Ambas", 
+    "ayuda": "No", 
+    "paleta de colores": "Predeterminado"}
+    window = v_configuraciones.build(configuraciones)
     while True:
         event, _values = window.read()
 

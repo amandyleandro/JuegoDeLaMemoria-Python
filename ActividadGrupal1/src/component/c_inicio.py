@@ -1,6 +1,6 @@
 from src.windows import v_inicio
-from src.component import menu
-from src.component import registrarse
+from src.component import c_menu
+from src.component import c_registro
 import PySimpleGUI as sg
 
 
@@ -19,18 +19,18 @@ def loop():
         
         if event == "-INICIAR_SESION-" :
             window.hide()    ### no esconder cerrarse
-            menu.start()
+            c_menu.start()
             window.un_hide()
             break
 
         if event == "-REGISTRARSE-" :
             window.hide()
-            registrarse.start()
-            window.close()
+            c_registro.start()
+            window.un_hide()
 
         if event == "-ENTRAR_INVITADO-" :
             window.hide()   ### no esconder cerrarse
-            menu.start()
+            c_menu.start()
             window.un_hide()
             break
 

@@ -1,4 +1,4 @@
-from src.windows import v_registrarse
+from src.windows import v_registro
 from src.component import menu
 import PySimpleGUI as sg
 
@@ -8,7 +8,7 @@ def start():
     window.close()
 
 def loop():
-    window = v_registrarse.build()
+    window = v_registro.build()
 
     while True:
         event, _values = window.read()
