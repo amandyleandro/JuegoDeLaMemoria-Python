@@ -1,5 +1,5 @@
 import PySimpleGUI as sg
-from src.windows import Utilidades as u
+from ..windows import Utilidades as u
 
 
 def build(configuracion):

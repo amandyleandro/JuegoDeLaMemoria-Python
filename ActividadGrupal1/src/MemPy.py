@@ -1,4 +1,4 @@
-from src.component import inicio
+from src.component import c_inicio
 
 def start():
-    inicio.start()
+    c_inicio.start()

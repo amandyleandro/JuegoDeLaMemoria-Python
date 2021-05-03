@@ -4,14 +4,14 @@ import src.windows.Utilidades as u
 def build():
 
     l_cont_form = [
-        u.texts("Usuario",17),
-        [sg.InputText("",font = ("Verdana"), pad =((2,2),(0,15)), size = (36,1))],
-        u.texts("Contraseña",17),
-        [sg.InputText("",font = ("Verdana"), pad =((2,2),(0,15)), size = (36,1))],
+        u.texts("Usuario *",17),
+        [sg.InputText("",font = ("Verdana"), pad =((2,2),(0,15)), size = (36,1), key = "-USERNAME-")],
+        u.texts("Contraseña *",17),
+        [sg.InputText("",font = ("Verdana"), pad =((2,2),(0,15)), size = (36,1), password_char="*", key = "-PASSW-")],
         u.texts("Repetir Contraseña",17),
-        [sg.InputText("",font = ("Verdana"), pad =((2,2),(0,15)), size = (36,1))],
-        u.texts("Genero",17) + [sg.Combo(["Mujer", "Hombre", "Otro"],default_value = "Otro",font = ("Verdana"), size = (7,1), pad = ((10,30),(0,0)))] +  
-        u.texts("Edad",17) + [sg.Spin([i for i in range(1,120)], initial_value=0, font = ("Verdana"), size = (3,1))],
+        [sg.InputText("",font = ("Verdana"), pad =((2,2),(0,15)), size = (36,1), password_char="*", key = "-REP_PASSW-")],
+        u.texts("Genero",17) + [sg.Combo(["Mujer", "Hombre", "Otro"],default_value = "Otro",font = ("Verdana"), size = (7,1), pad = ((10,30),(0,0)), key = "-GENERO-")] +  
+        u.texts("Edad",17) + [sg.Spin([i for i in range(1,120)], initial_value=0, font = ("Verdana"), size = (3,1), key = "-EDAD-")],
     ]
 
     l_cont = [

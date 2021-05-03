@@ -1,0 +1,50 @@
+[
+    {
+        "123": {
+            "password": "123",
+            "genero": "Otro",
+            "edad": "0",
+            "puntos": 0
+        }
+    },
+    {
+        "1234": {
+            "password": "123",
+            "genero": "Otro",
+            "edad": "0",
+            "puntos": 0
+        }
+    },
+    {
+        "fgh": {
+            "password": "qwe",
+            "genero": "Hombre",
+            "edad": "0",
+            "puntos": 0
+        }
+    },
+    {
+        "marta": {
+            "password": "124",
+            "genero": "Mujer",
+            "edad": 11,
+            "puntos": 0
+        }
+    },
+    {
+        "admin": {
+            "password": "admin",
+            "genero": "Hombre",
+            "edad": 45,
+            "puntos": 0
+        }
+    },
+    {
+        "invitado": {
+            "password": "invitado",
+            "genero": "Otro",
+            "edad": 99,
+            "puntos": 0
+        }
+    }
+]
