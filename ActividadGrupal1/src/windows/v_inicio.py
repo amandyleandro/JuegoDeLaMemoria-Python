@@ -5,9 +5,9 @@ def build():
 
     l_cont_form = [
         u.texts("Usuario",17),
-        [sg.InputText('',font = ("Verdana"), size=(35,1),pad = ((0,0),(0,10)) )],
+        [sg.InputText('',font = ("Verdana"), size=(35,1), key = "-USERNAME-",pad = ((0,0),(0,10)) )],
         u.texts("Contraseña",17),
-        [sg.InputText('',font = ("Verdana"), password_char = "*", size=(35,1),pad = ((0,0),(0,0)) )],
+        [sg.InputText('',font = ("Verdana"), password_char = "*", size=(35,1), key = "-PASSW-",pad = ((0,0),(0,0)) )],
     ]
 
     l_cont = [

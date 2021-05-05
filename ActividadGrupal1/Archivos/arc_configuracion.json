@@ -1,0 +1,13 @@
+[
+    {
+        "Carla": {
+            "textos": "",
+            "cant_casillas": "8x8",
+            "coincidencias": 2,
+            "tiempo": 125,
+            "estilo": "t2",
+            "tipo_elementos": "Imagenes",
+            "ayudas": "No"
+        }
+    }
+]

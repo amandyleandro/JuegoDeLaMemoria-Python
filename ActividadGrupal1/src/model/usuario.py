@@ -14,18 +14,18 @@ class usuario():
     def validarRegister(self,rep_pass):
         error = ""
         if not self.username:
-            error += " - usuario vacio \n"
+            error += " - Usuario vacío \n"
         if not self.password:
-            error += " - contraseña vacio\n"
+            error += " - Contraseña vacía\n"
         if self.password != rep_pass:
-            error += " - las contraseñas no coinciden\n"
+            error += " - Las contraseñas no coinciden\n"
         if self.existeUsuario():
-            error += " - el nombre de usuario ya existe\n"
+            error += " - El nombre de usuario ya existe\n"
         return error
 
     def existeUsuario(self):
         try:
-            with open("archivos" + os.sep + "arc_usuarios.json", encoding="utf8") as arc_usuarios:
+            with open("Archivos" + os.sep + "arc_usuarios.json", encoding="utf8") as arc_usuarios:
                 data_usuarios = json.load(arc_usuarios)
         except:
                 data_usuarios= []
@@ -43,12 +43,12 @@ class usuario():
 
     def guardarUsuarioJson(self):
         try:
-            with open("archivos"+ os.sep +"arc_usuarios.json", encoding="utf8") as arc_usuarios:
+            with open("Archivos"+ os.sep +"arc_usuarios.json", encoding="utf8") as arc_usuarios:
                 data_usuarios = json.load(arc_usuarios)
         except:
                 data_usuarios= []
 
-        with open("archivos"+ os.sep +"arc_usuarios.json", "w", encoding="utf8") as file:
+        with open("Archivos"+ os.sep +"arc_usuarios.json", "w", encoding="utf8") as file:
             data = {
                 self.username : {
                 "password" : self.password,

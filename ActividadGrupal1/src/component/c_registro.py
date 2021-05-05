@@ -10,7 +10,6 @@ def start():
 
 def loop():
     window = v_registro.build()
-
     while True:
         event, values = window.read()
         print(event, values)
@@ -18,9 +17,6 @@ def loop():
             break
 
         if event == "-REGISTRARSE-":
-            # if not event == "-USERNAME-" or not event == "-PASSW-" or not event == "-GENERO-" or not event == "-EDAD-" or not event == "-REP_PSSW-":
-            #     print("No se rellenaron todos los valores pedidos") 
-            #     sg.popup(error)
             user = usuario(values["-USERNAME-"].strip(),values["-PASSW-"],values["-GENERO-"],values["-EDAD-"]) #creo el usuario con la clase
             rep_contra = values["-REP_PASSW-"]
             error = user.validarRegister(rep_contra)

@@ -1,4 +1,5 @@
 from src.windows import v_configuraciones
+from src.model.configuracion import configuracion
 import json
 import PySimpleGUI as sg
 
@@ -8,19 +9,16 @@ def start():
     window.close()
 
 def loop():
-
-    configuraciones = {"textos":[],
-    "tiempo maximo": 120, 
-    "casillas": "8x8", 
-    "coincidencias": 2, 
-    "tipo de casillas": "Ambas", 
-    "ayuda": "No", 
-    "paleta de colores": "Predeterminado"}
-    window = v_configuraciones.build(configuraciones)
+    username = "Carla"
+    conf = configuracion(username)
+    window = v_configuraciones.build(conf.buscarConfig())
     while True:
-        event, _values = window.read()
+        event, values = window.read()
 
         if event in (sg.WIN_CLOSED,"Exit", "-VOLVER-"):
             break
-        
+        if event == "-GUARDAR-":
+            conf = configuracion(username, "", values["-CASILLAS-"], values["-COINCIDENCIAS-"], values["-TIEMPO-"], values["-ESTILO-"], values["-ELEMENTOS-"], values["-AYUDAS-"])
+            conf.guardarJson()
+            break
     return window
