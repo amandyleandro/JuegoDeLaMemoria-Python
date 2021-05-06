@@ -1,18 +1,8 @@
-[
-    {
-        "Carla": {
-            "password": "123",
-            "genero": "Mujer",
-            "edad": 18,
-            "puntos": 0
-        }
-    },
-    {
-        "Carlos": {
-            "password": "123",
-            "genero": "Hombre",
-            "edad": 21,
-            "puntos": 0
-        }
+{
+    "Carla": {
+        "password": "123",
+        "genero": "Mujer",
+        "edad": 18,
+        "puntos": 0
     }
-]
+}

@@ -5,9 +5,9 @@ def build():
 
     l_cont_form = [
         u.texts("Usuario",17),
-        [sg.InputText('',font = ("Verdana"), size=(35,1), key = "-USERNAME-",pad = ((0,0),(0,10)) )],
+        [sg.InputText('',font = ("Verdana"), size=(35,1),pad = ((0,0),(0,10)), key = "-USERNAME-" )],
         u.texts("Contraseña",17),
-        [sg.InputText('',font = ("Verdana"), password_char = "*", size=(35,1), key = "-PASSW-",pad = ((0,0),(0,0)) )],
+        [sg.InputText('',font = ("Verdana"), password_char = "*", size=(35,1),pad = ((0,0),(0,0)), key = "-PASSW-" )],
     ]
 
     l_cont = [
@@ -25,10 +25,3 @@ def build():
     ]
 
     return sg.Window("MemPy", layout,background_color="#424642", element_justification="c", margins = (20,20))
-
-"""window = build()
-while True:
-    event, values = window.read()
-    if event == "OK" or event == sg.WIN_CLOSED:
-        break
-window.close()"""

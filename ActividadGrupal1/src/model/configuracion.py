@@ -18,9 +18,16 @@ class configuracion():
             with open("Archivos"+ os.sep +"arc_configuracion.json","r", encoding="utf8") as arc_configuracion:
                 data_configuracion = json.load(arc_configuracion)
         except:
-                data_configuracion= []
-        data = {
-                self.username : {
+                data_configuracion= {}
+        with open("Archivos"+ os.sep +"arc_configuracion.json", "w", encoding="utf8") as file:
+            # i = 0
+            # while(i<len(data_configuracion) and self.username not in data_configuracion[i]):
+            #     i = i + 1
+            # if i < len(data_configuracion):
+            #     data_configuracion[i] = data
+            # else:
+            #     data_configuracion.append(data)
+            data_configuracion[self.username] = {
                 "textos" : self.textos,
                 "cant_casillas" : self.cant_casillas,
                 "coincidencias" : self.coicidencias,
@@ -29,15 +36,6 @@ class configuracion():
                 "tipo_elementos" : self.tipo_elementos,
                 "ayudas" : self.ayudas,
                 }
-            }
-        with open("Archivos"+ os.sep +"arc_configuracion.json", "w", encoding="utf8") as file:
-            i = 0
-            while(i<len(data_configuracion) and self.username not in data_configuracion[i]):
-                i = i + 1
-            if i < len(data_configuracion):
-                data_configuracion[i] = data
-            else:
-                data_configuracion.append(data)
             json.dump(data_configuracion,file, indent=4, ensure_ascii=False)
 
     def buscarConfig(self):

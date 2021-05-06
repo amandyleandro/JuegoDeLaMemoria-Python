@@ -22,8 +22,8 @@ def loop():
             error = user.validarRegister(rep_contra)
             if error == "": 
                 user.guardarUsuarioJson()
+                break
             else:
                 sg.popup(error)
-            break
-    
+
     return window

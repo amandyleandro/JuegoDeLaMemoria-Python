@@ -5,7 +5,6 @@ import PySimpleGUI as sg
 
 
 def start():
-    
     window = loop()
     window.close()
 
