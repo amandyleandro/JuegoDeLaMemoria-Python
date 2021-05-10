@@ -1,5 +1,10 @@
 import json
 import os
+
+dir_carp = "Archivos"
+dir_arch = "arc_usuarios.json"
+carpeta = os.path.join(os.getcwd(), dir_carp)
+
 class usuario(): 
 
     def __init__(self,username,password,genero = "desconocido", edad = 0,puntos = 0):
@@ -25,7 +30,7 @@ class usuario():
 
     def existeUsuario(self):
         try:
-            with open("Archivos" + os.sep + "arc_usuarios.json", encoding="utf8") as arc_usuarios:
+            with open(os.path.join(carpeta, dir_arch), "r", encoding="utf8") as arc_usuarios:
 
                 data_usuarios = json.load(arc_usuarios)
         except:
@@ -43,12 +48,12 @@ class usuario():
 
     def guardarUsuarioJson(self):
         try:
-            with open("Archivos"+ os.sep +"arc_usuarios.json", encoding="utf8") as arc_usuarios:
+            with open(os.path.join(carpeta, dir_arch), "r", encoding="utf8") as arc_usuarios:
 
                 data_usuarios = json.load(arc_usuarios)
         except:
                 data_usuarios= {}
-        with open("Archivos"+ os.sep +"arc_usuarios.json", "w", encoding="utf8") as file:
+        with open(os.path.join(carpeta, dir_arch), "w", encoding="utf8") as file:
             data_usuarios[self.username] = {
                 "password" : self.password,
                 "genero" : self.genero,

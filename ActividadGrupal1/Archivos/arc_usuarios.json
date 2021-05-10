@@ -4,5 +4,17 @@
         "genero": "Mujer",
         "edad": 18,
         "puntos": 0
+    },
+    "123": {
+        "password": "123",
+        "genero": "Otro",
+        "edad": "0",
+        "puntos": 0
+    },
+    "1234": {
+        "password": "1234",
+        "genero": "Otro",
+        "edad": "0",
+        "puntos": 0
     }
 }
