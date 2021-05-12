@@ -4,12 +4,11 @@ import json
 import PySimpleGUI as sg
 
 
-def start():
-    window = loop()
+def start(username):
+    window = loop(username)
     window.close()
 
-def loop():
-    username = "Carla"
+def loop(username):
     conf = configuracion(username)
     window = v_configuraciones.build(conf.buscarConfig())
     while True:

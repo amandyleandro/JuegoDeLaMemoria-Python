@@ -1,9 +1,9 @@
 {
     "Carla": {
         "textos": "",
-        "cant_casillas": "8x8",
-        "coincidencias": 2,
-        "tiempo": 120,
+        "cant_casillas": "10x10",
+        "coincidencias": 3,
+        "tiempo": 125,
         "estilo": "Predeterminado",
         "tipo_elementos": "Ambos",
         "ayudas": "No"

@@ -20,13 +20,6 @@ class configuracion():
         except:
                 data_configuracion= {}
         with open("Archivos"+ os.sep +"arc_configuracion.json", "w", encoding="utf8") as file:
-            # i = 0
-            # while(i<len(data_configuracion) and self.username not in data_configuracion[i]):
-            #     i = i + 1
-            # if i < len(data_configuracion):
-            #     data_configuracion[i] = data
-            # else:
-            #     data_configuracion.append(data)
             data_configuracion[self.username] = {
                 "textos" : self.textos,
                 "cant_casillas" : self.cant_casillas,
@@ -43,25 +36,24 @@ class configuracion():
             with open("Archivos"+ os.sep +"arc_configuracion.json", encoding="utf8") as arc_configuracion:
                 data_configuracion = json.load(arc_configuracion)
         except:
-                data_configuracion = []
-        for aux in data_configuracion:
-            if self.username in aux:
-                self = configuracion(
-                    self.username,
-                    aux[self.username]["textos"],
-                    aux[self.username]["cant_casillas"],
-                    aux[self.username]["coincidencias"],
-                    aux[self.username]["tiempo"],
-                    aux[self.username]["estilo"],
-                    aux[self.username]["tipo_elementos"],
-                    aux[self.username]["ayudas"]
-                    )
+                data_configuracion = {}
+        if self.username in data_configuracion:
+            self = configuracion(
+                self.username,
+                data_configuracion[self.username]["textos"],
+                data_configuracion[self.username]["cant_casillas"],
+                data_configuracion[self.username]["coincidencias"],
+                data_configuracion[self.username]["tiempo"],
+                data_configuracion[self.username]["estilo"],
+                data_configuracion[self.username]["tipo_elementos"],
+                data_configuracion[self.username]["ayudas"]
+                )
         return self
-    def imprimir(self):
-        print(self.username)
-        print(self.cant_casillas)
-        print(self.coicidencias)
-        print(self.tipo_elementos)
-        print(self.estilo)
-        print(self.tiempo)
-        print(self.textos)
+    # def imprimir(self):
+    #     print(self.username)
+    #     print(self.cant_casillas)
+    #     print(self.coicidencias)
+    #     print(self.tipo_elementos)
+    #     print(self.estilo)
+    #     print(self.tiempo)
+    #     print(self.textos)

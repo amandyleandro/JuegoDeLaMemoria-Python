@@ -1,5 +1,6 @@
 import json
 import os
+from src.model import configuracion
 
 dir_carp = "Archivos"
 dir_arch = "arc_usuarios.json"
@@ -13,8 +14,8 @@ class usuario():
             self.genero = genero
             self.edad = edad
             self.puntos = puntos
-
-            #self.configuracion = config.buscarConfig(usuario)
+            config = configuracion.configuracion(self.username)
+            self.configuracion = config.buscarConfig()
 
     def validarRegister(self,rep_pass):
         error = ""

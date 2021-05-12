@@ -4,11 +4,11 @@ from src.component import c_game
 import PySimpleGUI as sg
 
 
-def start():
-    window = loop()
+def start(username):
+    window = loop(username)
     window.close()
 
-def loop():
+def loop(username):
     window = v_menu.build()
 
     while True:
@@ -19,7 +19,7 @@ def loop():
         
         if event == "-CONFIGURACIONES-":
             window.hide()
-            c_configuraciones.start()
+            c_configuraciones.start(username)
             window.un_hide()
         if event == "-JUGAR-":
             window.hide()
