@@ -4,11 +4,11 @@ from ..windows import Utilidades as u
 
 def build(configuracion):
     
-    pad_t = ((0,0),(0,15))
+    pad_t = ((10,0),(0,15))
     pad_i = ((10,0),(0,15))
 
     l_cont_form = [
-    u.texts("Textos",17, pad = pad_t),
+    u.texts("Textos",17, pad = pad_t) + u.buttons("Configurar Textos",11,"-CONF_TXT-", pad =((50,10),(0,10)), size = (25,1)),
     u.texts("Tiempo maximo",17, pad = pad_t) + [sg.Spin([i for i in range(120,300)], initial_value= configuracion.tiempo, font = ("Verdana"), size = (3,1), key = "-TIEMPO-",pad = pad_i )],
     u.texts("Cantidad de casillas",17, pad = pad_t) + [sg.Combo(["8x8", "10x10", "12x12"],default_value = configuracion.cant_casillas,font = ("Verdana"),key = "-CASILLAS-", pad = pad_i )],
     u.texts("Cantidad de coincidencias",17, pad = pad_t) + [sg.Spin([i for i in range(1,4)], initial_value= configuracion.coicidencias, font = ("Verdana"), size = (3,1),key = "-COINCIDENCIAS-", pad = pad_i )],
@@ -21,7 +21,7 @@ def build(configuracion):
     u.texts("Configuraciones",25,pad = ((0,0),(20,16))),
     [sg.Column(l_cont_form, background_color="#536162", element_justification="l",pad = pad_t)],
     u.buttons("GUARDAR",14,"-GUARDAR-", pad =((10,10),(0,10)), size = (30,1)),
-    u.buttons("VOLVER",13,"-VOLVER-",pad =((10,20),(0,10)),size = (15,1)) + u.buttons("RESTABLECER",13,"-RESTABLECER-",pad =((0,10),(0,10)),size = (15,1)),
+    u.buttons("VOLVER",13,"-VOLVER-",pad =((10,10),(0,10)),size = (30,1)), #+ u.buttons("RESTABLECER",13,"-RESTABLECER-",pad =((0,10),(0,10)),size = (15,1)),
     ]
 
     layout = [

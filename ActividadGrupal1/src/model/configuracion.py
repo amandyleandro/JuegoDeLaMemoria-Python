@@ -1,9 +1,18 @@
 
 import json
 import os
-class configuracion():
 
-    def __init__(self,username,textos = "", cant_casillas = "8x8", coincidencias = 2, tiempo = 120, estilo = "Predeterminado", tipo_elementos = "Ambos", ayudas = "No"):
+dir_carp = "Archivos"
+dir_arch = "arc_configuracion.json"
+carpeta = os.path.join(os.getcwd(), dir_carp)
+
+text = {"Comienzo": "Ahora comienza la partida",
+        "Gano": "¡Ganaste!",
+        "Perdio":"¡Perdiste!",
+        "Quedan 30 segundos": "¡Quedan 30 segundos!"}
+
+class configuracion():
+    def __init__(self,username,textos = text, cant_casillas = "8x8", coincidencias = 2, tiempo = 120, estilo = "Predeterminado", tipo_elementos = "Ambos", ayudas = "No"):
         self.username = username
         self.textos = textos
         self.cant_casillas = cant_casillas
@@ -15,11 +24,11 @@ class configuracion():
         
     def guardarJson(self):
         try:
-            with open("Archivos"+ os.sep +"arc_configuracion.json","r", encoding="utf8") as arc_configuracion:
+            with open(os.path.join(carpeta, dir_arch), "r", encoding="utf8") as arc_configuracion:
                 data_configuracion = json.load(arc_configuracion)
         except:
                 data_configuracion= {}
-        with open("Archivos"+ os.sep +"arc_configuracion.json", "w", encoding="utf8") as file:
+        with open(os.path.join(carpeta, dir_arch), "w", encoding="utf8") as file:
             data_configuracion[self.username] = {
                 "textos" : self.textos,
                 "cant_casillas" : self.cant_casillas,
@@ -33,7 +42,7 @@ class configuracion():
 
     def buscarConfig(self):
         try:
-            with open("Archivos"+ os.sep +"arc_configuracion.json", encoding="utf8") as arc_configuracion:
+            with open(os.path.join(carpeta, dir_arch), "r", encoding="utf8") as arc_configuracion:
                 data_configuracion = json.load(arc_configuracion)
         except:
                 data_configuracion = {}

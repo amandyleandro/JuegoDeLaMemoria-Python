@@ -1,6 +1,11 @@
 {
     "Carla": {
-        "textos": "",
+        "textos": {
+            "Comienzo": "comienzo",
+            "Gano": "¡Ganaste!",
+            "Perdio": "¡Perdiste!",
+            "Quedan 30 segundos": "¡Quedan 30 segundos!"
+        },
         "cant_casillas": "10x10",
         "coincidencias": 3,
         "tiempo": 125,
