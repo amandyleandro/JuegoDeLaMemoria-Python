@@ -66,6 +66,7 @@ class usuario(configuracion):
             json.dump(data_usuarios,file, indent=4, ensure_ascii=False)
 
     def imprimir(self):
+        self.imprimirConfig()
         print(self.username)
         print(self.password)
         print(self.genero)

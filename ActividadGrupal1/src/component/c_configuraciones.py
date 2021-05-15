@@ -19,7 +19,12 @@ def loop(user):
         if event in (sg.WIN_CLOSED,"Exit", "-VOLVER-"):
             break
         if event == "-GUARDAR-":
-            #conf = configuracion(conf.textos , values["-CASILLAS-"], values["-COINCIDENCIAS-"], values["-TIEMPO-"], values["-ESTILO-"], values["-ELEMENTOS-"], values["-AYUDAS-"])
+            conf = configuracion(conf.textos , values["-CASILLAS-"], values["-COINCIDENCIAS-"], values["-TIEMPO-"], values["-ESTILO-"], values["-ELEMENTOS-"], values["-AYUDAS-"])
+            # user.imprimir()
+            # print("----------------------")
+            user.setConfig(conf)
+            # user.imprimir()
+            # user.imprimirConfig()
             user.guardarJson(user.username)
             break
         if event == "-CONF_TXT-":

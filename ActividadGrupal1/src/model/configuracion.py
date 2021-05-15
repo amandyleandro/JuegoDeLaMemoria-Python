@@ -15,7 +15,7 @@ class configuracion():
     def __init__(self,textos = text, cant_casillas = "8x8", coincidencias = 2, tiempo = 120, estilo = "Predeterminado", tipo_elementos = "Ambos", ayudas = "No"):
         self.textos = textos
         self.cant_casillas = cant_casillas
-        self.coicidencias = coincidencias
+        self.coincidencias = coincidencias
         self.tiempo = tiempo
         self.estilo = estilo
         self.tipo_elementos = tipo_elementos
@@ -34,12 +34,12 @@ class configuracion():
             data_configuracion[username] = {
                 "textos" : self.textos,
                 "cant_casillas" : self.cant_casillas,
-                "coincidencias" : self.coicidencias,
+                "coincidencias" : self.coincidencias,
                 "tiempo" : self.tiempo,
                 "estilo" : self.estilo,
                 "tipo_elementos" : self.tipo_elementos,
                 "ayudas" : self.ayudas,
-                }
+                }   
             json.dump(data_configuracion,file, indent=4, ensure_ascii=False)
 
     def buscarConfig(self, username):
@@ -60,9 +60,17 @@ class configuracion():
                 data_configuracion[self.username]["ayudas"]
                 )
         return self
-    def imprimir(self):
+    def setConfig(self,conf):
+        self.textos = conf.textos
+        self.cant_casillas = conf.cant_casillas
+        self.coincidencias = conf.coincidencias
+        self.tiempo = conf.tiempo
+        self.estilo = conf.estilo
+        self.tipo_elementos = conf.tipo_elementos
+        self.ayudas = conf.ayudas
+    def imprimirConfig(self):
         print(self.cant_casillas)
-        print(self.coicidencias)
+        print(self.coincidencias)
         print(self.tipo_elementos)
         print(self.estilo)
         print(self.tiempo)

@@ -1,12 +1,12 @@
 {
     "Carla": {
         "textos": {
-            "Comienzo": "Comienzo de partida!",
+            "Comienzo": "Ahora comienza la partida",
             "Gano": "¡Ganaste!",
             "Perdio": "¡Perdiste!",
             "Quedan 30 segundos": "¡Quedan 30 segundos!"
         },
-        "cant_casillas": "8x8",
+        "cant_casillas": "10x10",
         "coincidencias": 2,
         "tiempo": 120,
         "estilo": "Predeterminado",
