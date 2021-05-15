@@ -1,12 +1,12 @@
 import json
 import os
-from src.model import configuracion
+from src.model.configuracion import configuracion
 
 dir_carp = "Archivos"
 dir_arch = "arc_usuarios.json"
 carpeta = os.path.join(os.getcwd(), dir_carp)
 
-class usuario(): 
+class usuario(configuracion): 
 
     def __init__(self,username,password,genero = "desconocido", edad = 0,puntos = 0):
             self.username = username
@@ -14,8 +14,10 @@ class usuario():
             self.genero = genero
             self.edad = edad
             self.puntos = puntos
-            config = configuracion.configuracion(self.username)
-            self.configuracion = config.buscarConfig()
+            configuracion.__init__(self)
+
+    def getUserName(self):
+        return self.username
 
     def validarRegister(self,rep_pass):
         error = ""

@@ -1,4 +1,4 @@
-
+from abc import abstractmethod, ABC
 import json
 import os
 
@@ -12,8 +12,7 @@ text = {"Comienzo": "Ahora comienza la partida",
         "Quedan 30 segundos": "¡Quedan 30 segundos!"}
 
 class configuracion():
-    def __init__(self,username,textos = text, cant_casillas = "8x8", coincidencias = 2, tiempo = 120, estilo = "Predeterminado", tipo_elementos = "Ambos", ayudas = "No"):
-        self.username = username
+    def __init__(self,textos = text, cant_casillas = "8x8", coincidencias = 2, tiempo = 120, estilo = "Predeterminado", tipo_elementos = "Ambos", ayudas = "No"):
         self.textos = textos
         self.cant_casillas = cant_casillas
         self.coicidencias = coincidencias
@@ -21,15 +20,18 @@ class configuracion():
         self.estilo = estilo
         self.tipo_elementos = tipo_elementos
         self.ayudas = ayudas
-        
-    def guardarJson(self):
+    @abstractmethod        
+    def getUserName(self):
+        raise NotImplementedError
+    def guardarJson(self, username):
+        #username = self.getUserName()
         try:
             with open(os.path.join(carpeta, dir_arch), "r", encoding="utf8") as arc_configuracion:
                 data_configuracion = json.load(arc_configuracion)
         except:
                 data_configuracion= {}
         with open(os.path.join(carpeta, dir_arch), "w", encoding="utf8") as file:
-            data_configuracion[self.username] = {
+            data_configuracion[username] = {
                 "textos" : self.textos,
                 "cant_casillas" : self.cant_casillas,
                 "coincidencias" : self.coicidencias,
@@ -40,15 +42,15 @@ class configuracion():
                 }
             json.dump(data_configuracion,file, indent=4, ensure_ascii=False)
 
-    def buscarConfig(self):
+    def buscarConfig(self, username):
+        #username = self.getUserName()
         try:
             with open(os.path.join(carpeta, dir_arch), "r", encoding="utf8") as arc_configuracion:
                 data_configuracion = json.load(arc_configuracion)
         except:
                 data_configuracion = {}
-        if self.username in data_configuracion:
+        if username in data_configuracion:
             self = configuracion(
-                self.username,
                 data_configuracion[self.username]["textos"],
                 data_configuracion[self.username]["cant_casillas"],
                 data_configuracion[self.username]["coincidencias"],
@@ -58,11 +60,10 @@ class configuracion():
                 data_configuracion[self.username]["ayudas"]
                 )
         return self
-    # def imprimir(self):
-    #     print(self.username)
-    #     print(self.cant_casillas)
-    #     print(self.coicidencias)
-    #     print(self.tipo_elementos)
-    #     print(self.estilo)
-    #     print(self.tiempo)
-    #     print(self.textos)
+    def imprimir(self):
+        print(self.cant_casillas)
+        print(self.coicidencias)
+        print(self.tipo_elementos)
+        print(self.estilo)
+        print(self.tiempo)
+        print(self.textos)
