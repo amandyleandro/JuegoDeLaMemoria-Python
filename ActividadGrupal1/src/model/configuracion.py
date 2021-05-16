@@ -60,6 +60,7 @@ class configuracion():
                 data_configuracion[self.username]["ayudas"]
                 )
         return self
+    
     def setConfig(self,conf):
         self.textos = conf.textos
         self.cant_casillas = conf.cant_casillas
@@ -68,6 +69,7 @@ class configuracion():
         self.estilo = conf.estilo
         self.tipo_elementos = conf.tipo_elementos
         self.ayudas = conf.ayudas
+    
     def imprimirConfig(self):
         print(self.cant_casillas)
         print(self.coincidencias)
