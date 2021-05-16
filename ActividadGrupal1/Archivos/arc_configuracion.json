@@ -6,11 +6,11 @@
             "Perdio": "¡Perdiste!",
             "Quedan 30 segundos": "¡Quedan 30 segundos!"
         },
-        "cant_casillas": "10x10",
-        "coincidencias": 2,
+        "cant_casillas": "8x8",
+        "coincidencias": 3,
         "tiempo": 120,
         "estilo": "Predeterminado",
-        "tipo_elementos": "Ambos",
+        "tipo_elementos": "Imagenes",
         "ayudas": "No"
     },
     "123": {

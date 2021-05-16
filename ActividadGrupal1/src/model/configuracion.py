@@ -69,7 +69,7 @@ class configuracion():
         self.estilo = conf.estilo
         self.tipo_elementos = conf.tipo_elementos
         self.ayudas = conf.ayudas
-    
+        # self = conf
     def imprimirConfig(self):
         print(self.cant_casillas)
         print(self.coincidencias)
