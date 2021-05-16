@@ -38,10 +38,10 @@ def loop():
             window.un_hide()
 
         if event == "-ENTRAR_INVITADO-" :
-            window.hide()   ### no esconder cerrarse
-            c_menu.start()
-            window.un_hide()
-            break
+            user = usuario("invitado","invitado")
+            window.close()
+            #POPUP "INVITADO desventajas"
+            c_menu.start(user)
 
 
     return window

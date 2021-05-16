@@ -60,6 +60,7 @@ class configuracion():
                 data_configuracion[self.username]["ayudas"]
                 )
         return self
+    
     def setConfig(self,conf):
         self.textos = conf.textos
         self.cant_casillas = conf.cant_casillas
