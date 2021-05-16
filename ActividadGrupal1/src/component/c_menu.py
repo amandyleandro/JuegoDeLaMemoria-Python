@@ -23,6 +23,6 @@ def loop(user):
             window.un_hide()
         if event == "-JUGAR-":
             window.hide()
-            c_game.start()
+            c_game.start(user)
             window.un_hide()
     return window

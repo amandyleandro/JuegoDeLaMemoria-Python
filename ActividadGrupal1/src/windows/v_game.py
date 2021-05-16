@@ -1,6 +1,6 @@
 import PySimpleGUI as sg
 
-def build(player, board_data,cant_btn,cant_ayudas,total_ayudas):
+def build(user, board_data,cant_btn,cant_ayudas,total_ayudas):
 
     fuente = "verdana"
     texto_color = "#f3f4ed"
@@ -37,7 +37,7 @@ def build(player, board_data,cant_btn,cant_ayudas,total_ayudas):
         [sg.Text("00:00", font=(fuente, 38), text_color=texto_color,pad = ((0,0),(0,40)), background_color= fondo_color, key='-TIMER-',),
         sg.Text(" / ", font=(fuente, 30), text_color=texto_color, background_color=fondo_color,pad = ((0,0),(0,25)),),
         sg.Text("Maximo \n 05:00", font=(fuente, 15), text_color=texto_color, background_color= fondo_color,pad = ((0,0),(0,25)))],
-        [sg.Text(player["name"] + " (843 Pts)", font=(fuente, 20), text_color=texto_color, background_color= fondo_color,pad = ((0,0),(0,20)) )],
+        [sg.Text(f"{user.username} ({user.puntos} Pts)", font=(fuente, 20), text_color=texto_color, background_color= fondo_color,pad = ((0,0),(0,20)) )],
         [sg.Text("Pts: 0", font=(fuente, 17), text_color=texto_color, background_color= fondo_color)],
         [sg.Text(f"Pares encontrados: 0/{pares}", font=(fuente, 17), text_color=texto_color, background_color= fondo_color)],
         [sg.Text("Dificultad: " + str(cant_btn) + "X" + str(cant_btn), font=(fuente, 17), text_color=texto_color, background_color= fondo_color)],

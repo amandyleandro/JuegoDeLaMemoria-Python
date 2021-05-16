@@ -25,7 +25,7 @@ def loop():
                 if user.password == user2.password:
                     user = user2
                     window.close()
-                    
+                    # Buscar config, si esta, cargarla y si no, crear predeterminada
                     c_menu.start(user)
                 else:
                     sg.popup("La contraseña es incorrecta")
