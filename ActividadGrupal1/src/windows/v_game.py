@@ -12,6 +12,9 @@ def build(user, board_data,cant_btn,cant_ayudas,total_ayudas):
 
     tam_bt = ()
     tam_info = ()
+    if cant_btn == 4:
+        tam_bt = (12,6)
+        tam_info = (350,635)
     if cant_btn == 6:
         tam_bt = (12,6)
         tam_info = (350,635)
@@ -21,6 +24,12 @@ def build(user, board_data,cant_btn,cant_ayudas,total_ayudas):
     elif cant_btn == 10: 
         tam_bt = (8,4)
         tam_info = (350,740)
+    elif cant_btn == 12: 
+        tam_bt = (6,3)
+        tam_info = (350,780)
+    elif cant_btn == 14: 
+        tam_bt = (6,3)
+        tam_info = (350,800)
 
 
     l_tablero = []

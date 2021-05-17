@@ -7,9 +7,9 @@
             "Quedan 30 segundos": "¡Quedan 30 segundos!"
         },
         "cant_casillas": {
-            "Nivel 1": "6x6",
+            "Nivel 1": "4x4",
             "Nivel 2": "10x10",
-            "Nivel 3": "12x12"
+            "Nivel 3": "14x14"
         },
         "coincidencias": 3,
         "tiempo": 120,
