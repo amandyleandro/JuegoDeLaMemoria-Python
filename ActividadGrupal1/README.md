@@ -25,7 +25,7 @@ Los siguientes son los pasos a seguir para que el programa funcione correctament
 
 - Descargar el repositorio mediante "git clone".
 
-- Ubicarse dentro de la carpeta "ACTIVIDADGRUPAL1".
+- Ubicarse dentro de la carpeta "ActividadGrupal1".
 
 - Ejecutar el archivo run.py.
 
