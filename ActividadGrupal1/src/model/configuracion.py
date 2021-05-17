@@ -10,9 +10,14 @@ text = {"Comienzo": "Ahora comienza la partida",
         "Gano": "¡Ganaste!",
         "Perdio":"¡Perdiste!",
         "Quedan 30 segundos": "¡Quedan 30 segundos!"}
+casillas_nivel = { 
+    "Nivel 1": "4x4",
+    "Nivel 2": "8x8",
+    "Nivel 3": "12x12"
+}
 
 class configuracion():
-    def __init__(self,textos = text, cant_casillas = "8x8", coincidencias = 2, tiempo = 120, estilo = "Predeterminado", tipo_elementos = "Ambos", ayudas = "No"):
+    def __init__(self,textos = text, cant_casillas = casillas_nivel, coincidencias = 2, tiempo = 120, estilo = "Predeterminado", tipo_elementos = "Ambos", ayudas = "No"):
         self.textos = textos
         self.cant_casillas = cant_casillas
         self.coincidencias = coincidencias
@@ -24,6 +29,10 @@ class configuracion():
     def getUserName(self):
         raise NotImplementedError
     def guardarJson(self, username):
+        """Esta función abre el archivo json donde se encuentran guardadas las configuraciones
+        y devuelve en data_configuracion la estructura allí guardada, en caso de no haber nada en
+        el archivo, crea un nuevo diccionario. Luego modifica la estructura recibida y 
+        sobrescribe el archivo"""
         #username = self.getUserName()
         try:
             with open(os.path.join(carpeta, dir_arch), "r", encoding="utf8") as arc_configuracion:
@@ -43,6 +52,10 @@ class configuracion():
             json.dump(data_configuracion,file, indent=4, ensure_ascii=False)
 
     def buscarConfig(self, username):
+        """Esta función abre el archivo json donde se encuentran guardadas las configuraciones
+        y devuelve en data_configuracion la estructura allí guardada, en caso de no haber nada en
+        el archivo, crea un nuevo diccionario. Luego guarda en la clase actual lo recibido en data_configuracion
+        y lo devuelve."""
         #username = self.getUserName()
         try:
             with open(os.path.join(carpeta, dir_arch), "r", encoding="utf8") as arc_configuracion:
@@ -62,6 +75,7 @@ class configuracion():
         return self
     
     def setConfig(self,conf):
+        """Esta función setea las variables de clase con lo recibido en los parámetros"""
         self.textos = conf.textos
         self.cant_casillas = conf.cant_casillas
         self.coincidencias = conf.coincidencias
@@ -71,6 +85,7 @@ class configuracion():
         self.ayudas = conf.ayudas
         # self = conf
     def imprimirConfig(self):
+        """Esta función imprime los valores de las variables de clase"""
         print(self.cant_casillas)
         print(self.coincidencias)
         print(self.tipo_elementos)

@@ -11,11 +11,15 @@ def loop(conf):
     texto = conf.textos
     while True:
         event, values = window.read()
-        if event in (sg.WIN_CLOSED,"Exit"):
+        if event in (sg.WIN_CLOSED,"Exit", "-VOLVER-"):
             break
         if event == "-SELECT-":
             window.Element('-TXT_ACTUAL-').Update(value=conf.textos[values['-TEXTOS-']])
         if event == "-GUARDAR-":
-            texto[values["-TEXTOS-"]] = values["-INPUT_TXT-"]
-            break
+            if not values["-INPUT_TXT-"]:
+                error = "Debe ingresar un texto"
+                sg.popup(error)
+            else:
+                texto[values["-TEXTOS-"]] = values["-INPUT_TXT-"]
+                break
     return window, texto

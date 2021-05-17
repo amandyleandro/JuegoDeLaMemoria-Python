@@ -1,6 +1,6 @@
 from src.windows import v_menu
 from src.component import c_configuraciones
-from src.component import c_game
+from src.component import c_niveles
 import PySimpleGUI as sg
 
 
@@ -23,6 +23,6 @@ def loop(user):
             window.un_hide()
         if event == "-JUGAR-":
             window.hide()
-            c_game.start(user)
+            c_niveles.start(user)
             window.un_hide()
     return window

@@ -7,12 +7,13 @@ def build():
 
     l_cont = [
         [sg.Text("MENU", font=("Verdana", 25), text_color="#f3f4ed", background_color="#536162",pad = ((0,0),(20,16)), size = (20,1), justification = "c" )],
-        buttons("JUGAR",20,"-JUGAR-",pad = pad),
-        buttons("CONFIGURACIONES",20,"-CONFIGURACIONES-",pad = pad),
-        buttons("TABLA DE PUNTOS",20,"-TABLA_PUNTOS-",pad = pad),
-        buttons("ESTADISTICAS",20,"-ESTADISTICAS-",pad = pad),
-        buttons("REGLAS",20,"-REGLAS-",pad = pad),
-        buttons("SALIR",20,"-SALIR-",pad = pad),
+        buttons("JUGAR",17,"-JUGAR-",pad = pad),
+        buttons("CONFIGURACIONES",17,"-CONFIGURACIONES-",pad = pad),
+        buttons("TABLA DE PUNTOS",17,"-TABLA_PUNTOS-",pad = pad),
+        buttons("ESTADISTICAS",17,"-ESTADISTICAS-",pad = pad),
+        buttons("REGLAS",17,"-REGLAS-",pad = pad),
+        buttons("AYUDA",17,"-AYUDA-",pad = pad),
+        buttons("SALIR",17,"-SALIR-",pad = pad),
     ]
 
     layout = [

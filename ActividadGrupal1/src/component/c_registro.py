@@ -22,6 +22,7 @@ def loop():
             error = user.validarRegister(rep_contra)
             if error == "": 
                 user.guardarUsuarioJson()
+                user.guardarJson(user.username)
                 break
             else:
                 sg.popup(error)

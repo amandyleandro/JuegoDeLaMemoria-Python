@@ -6,7 +6,11 @@
             "Perdio": "¡Perdiste!",
             "Quedan 30 segundos": "¡Quedan 30 segundos!"
         },
-        "cant_casillas": "8x8",
+        "cant_casillas": {
+            "Nivel 1": "6x6",
+            "Nivel 2": "10x10",
+            "Nivel 3": "12x12"
+        },
         "coincidencias": 3,
         "tiempo": 120,
         "estilo": "Predeterminado",

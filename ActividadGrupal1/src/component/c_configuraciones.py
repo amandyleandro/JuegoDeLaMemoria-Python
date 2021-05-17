@@ -19,7 +19,12 @@ def loop(user):
         if event in (sg.WIN_CLOSED,"Exit", "-VOLVER-"):
             break
         if event == "-GUARDAR-":
-            user.setConfig(configuracion(conf.textos , values["-CASILLAS-"], values["-COINCIDENCIAS-"], values["-TIEMPO-"], values["-ESTILO-"], values["-ELEMENTOS-"], values["-AYUDAS-"]))
+            casillas = {
+                "Nivel 1": values["-CASILLAS_1-"],
+                "Nivel 2": values["-CASILLAS_2-"],
+                "Nivel 3": values["-CASILLAS_3-"]
+            }
+            user.setConfig(configuracion(conf.textos , casillas, values["-COINCIDENCIAS-"], values["-TIEMPO-"], values["-ESTILO-"], values["-ELEMENTOS-"], values["-AYUDAS-"]))
             user.guardarJson(user.username)
             break
         if event == "-CONF_TXT-":

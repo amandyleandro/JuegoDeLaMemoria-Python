@@ -17,9 +17,11 @@ class usuario(configuracion):
             configuracion.__init__(self)
 
     def getUserName(self):
+        """Esta función retorna el nombre de usuario"""
         return self.username
 
     def validarRegister(self,rep_pass):
+        """Esta función valida si alguno de los parámetros está vacío o si son erróneos"""
         error = ""
         if not self.username:
             error += " - Usuario vacío \n"
@@ -32,6 +34,9 @@ class usuario(configuracion):
         return error
 
     def existeUsuario(self):
+        """Esta función guarda en data_usuarios lo que se encuentra en el archivo json de usuarios, luego
+        verifica si el usuario actual se encuentra en la estructura de datos, de ser así lo devuelve, si no, 
+        devuelve falso"""
         try:
             with open(os.path.join(carpeta, dir_arch), "r", encoding="utf8") as arc_usuarios:
 
@@ -50,6 +55,10 @@ class usuario(configuracion):
         return False
 
     def guardarUsuarioJson(self):
+        """Esta función abre el archivo json donde se encuentran guardadas las configuraciones
+        y devuelve en data_usuarios la estructura allí guardada, en caso de no haber nada en
+        el archivo, crea un nuevo diccionario. Luego modifica la estructura recibida y 
+        sobrescribe el archivo."""
         try:
             with open(os.path.join(carpeta, dir_arch), "r", encoding="utf8") as arc_usuarios:
 
@@ -66,6 +75,7 @@ class usuario(configuracion):
             json.dump(data_usuarios,file, indent=4, ensure_ascii=False)
 
     def imprimir(self):
+        """Esta función imprime los valores de las variables de clase"""
         self.imprimirConfig()
         print(self.username)
         print(self.password)

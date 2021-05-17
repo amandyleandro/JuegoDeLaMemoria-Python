@@ -5,13 +5,13 @@ import PySimpleGUI as sg
 def time_as_int():
     return int(round(time.time()*100))
 
-def start(user):
-    window = loop(user)
+def start(user, nivel):
+    window = loop(user, nivel)
     window.close()
 
-def loop(user):
+def loop(user, nivel):
     conf = user.buscarConfig(user.username)
-    cant_btn = int(conf.cant_casillas.split('x')[0])
+    cant_btn = int(conf.cant_casillas[nivel].split('x')[0])
     cant_ayudas = 5
     total_ayudas = cant_ayudas
 
