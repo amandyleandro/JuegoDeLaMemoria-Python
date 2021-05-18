@@ -12,7 +12,6 @@ def loop():
     window = v_registro.build()
     while True:
         event, values = window.read()
-        print(event, values)
         if event in (sg.WIN_CLOSED,"Exit", "-VOLVER-"):
             break
 
@@ -22,7 +21,7 @@ def loop():
             error = user.validarRegister(rep_contra)
             if error == "": 
                 user.guardarUsuarioJson()
-                user.guardarJson(user.username)
+                user.guardarConfigJson()
                 break
             else:
                 sg.popup(error)

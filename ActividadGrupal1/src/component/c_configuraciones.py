@@ -10,9 +10,7 @@ def start(user):
     window.close()
 
 def loop(user):
-    # user.imprimir()
-    # user.buscarConfig(user.username).imprimir()
-    conf = user.buscarConfig(user.username)
+    conf = user.configActual()
     window = v_configuraciones.build(conf)
     while True:
         event, values = window.read()
@@ -24,8 +22,8 @@ def loop(user):
                 "Nivel 2": values["-CASILLAS_2-"],
                 "Nivel 3": values["-CASILLAS_3-"]
             }
-            user.setConfig(configuracion(conf.textos , casillas, values["-COINCIDENCIAS-"], values["-TIEMPO-"], values["-ESTILO-"], values["-ELEMENTOS-"], values["-AYUDAS-"]))
-            user.guardarJson(user.username)
+            user.setConfig(configuracion(conf["textos"] , casillas, values["-COINCIDENCIAS-"], values["-TIEMPO-"], values["-ESTILO-"], values["-ELEMENTOS-"], values["-AYUDAS-"]))
+            user.guardarConfigJson()
             break
         if event == "-CONF_TXT-":
             window.hide()

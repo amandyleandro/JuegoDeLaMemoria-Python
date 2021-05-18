@@ -157,7 +157,7 @@ import os.path
 from collections import Counter
 
 def abrirArchivo(arch):
-    dir_carp = "Archivos\\data_csv"                                         ##### ?
+    dir_carp = "Archivos" + os.sep + "data_csv"                                        
     carpeta = os.path.join(os.getcwd(), dir_carp)
     archivo = open(os.path.join(carpeta, arch + ".csv"))
 

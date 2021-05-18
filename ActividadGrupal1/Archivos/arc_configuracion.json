@@ -2,7 +2,7 @@
     "Carla": {
         "textos": {
             "Comienzo": "Ahora comienza la partida",
-            "Gano": "¡Ganaste!",
+            "Gano": "Gano",
             "Perdio": "¡Perdiste!",
             "Quedan 30 segundos": "¡Quedan 30 segundos!"
         },
@@ -15,6 +15,24 @@
         "tiempo": 120,
         "estilo": "Predeterminado",
         "tipo_elementos": "Imagenes",
+        "ayudas": "No"
+    },
+    "123": {
+        "textos": {
+            "Comienzo": "Ahora comienza la partida",
+            "Gano": "¡Ganaste!",
+            "Perdio": "¡Perdiste!",
+            "Quedan 30 segundos": "¡Quedan 30 segundos!"
+        },
+        "cant_casillas": {
+            "Nivel 1": "4x4",
+            "Nivel 2": "8x8",
+            "Nivel 3": "12x12"
+        },
+        "coincidencias": 2,
+        "tiempo": 120,
+        "estilo": "Predeterminado",
+        "tipo_elementos": "Ambos",
         "ayudas": "No"
     }
 }

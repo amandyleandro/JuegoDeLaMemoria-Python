@@ -8,13 +8,13 @@ def start(conf):
     return text
 def loop(conf):
     window = v_textos.build(conf)
-    texto = conf.textos
+    texto = conf["textos"]
     while True:
         event, values = window.read()
         if event in (sg.WIN_CLOSED,"Exit", "-VOLVER-"):
             break
         if event == "-SELECT-":
-            window.Element('-TXT_ACTUAL-').Update(value=conf.textos[values['-TEXTOS-']])
+            window.Element('-TXT_ACTUAL-').Update(value=conf["textos"][values['-TEXTOS-']])
         if event == "-GUARDAR-":
             if not values["-INPUT_TXT-"]:
                 error = "Debe ingresar un texto"

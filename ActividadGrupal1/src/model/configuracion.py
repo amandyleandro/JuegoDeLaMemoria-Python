@@ -28,12 +28,12 @@ class configuracion():
     @abstractmethod        
     def getUserName(self):
         raise NotImplementedError
-    def guardarJson(self, username):
+    def guardarConfigJson(self):
         """Esta función abre el archivo json donde se encuentran guardadas las configuraciones
         y devuelve en data_configuracion la estructura allí guardada, en caso de no haber nada en
         el archivo, crea un nuevo diccionario. Luego modifica la estructura recibida y 
         sobrescribe el archivo"""
-        #username = self.getUserName()
+        username = self.getUserName()
         try:
             with open(os.path.join(carpeta, dir_arch), "r", encoding="utf8") as arc_configuracion:
                 data_configuracion = json.load(arc_configuracion)
@@ -51,28 +51,33 @@ class configuracion():
                 }   
             json.dump(data_configuracion,file, indent=4, ensure_ascii=False)
 
-    def buscarConfig(self, username):
+    def buscarConfig(self):
+        username = self.getUserName()
+        with open(os.path.join(carpeta, dir_arch), "r", encoding="utf8") as arc_configuracion:
+            data_configuracion = json.load(arc_configuracion)
+            self.textos = data_configuracion[username]["textos"]
+            self.cant_casillas = data_configuracion[username]["cant_casillas"]
+            self.coincidencias = data_configuracion[username]["coincidencias"]
+            self.tiempo = data_configuracion[username]["tiempo"]
+            self.estilo = data_configuracion[username]["estilo"]
+            self.tipo_elementos = data_configuracion[username]["tipo_elementos"]
+            self.ayudas = data_configuracion[username]["ayudas"]
+
+    def configActual(self):
         """Esta función abre el archivo json donde se encuentran guardadas las configuraciones
         y devuelve en data_configuracion la estructura allí guardada, en caso de no haber nada en
         el archivo, crea un nuevo diccionario. Luego guarda en la clase actual lo recibido en data_configuracion
         y lo devuelve."""
-        #username = self.getUserName()
-        try:
-            with open(os.path.join(carpeta, dir_arch), "r", encoding="utf8") as arc_configuracion:
-                data_configuracion = json.load(arc_configuracion)
-        except:
-                data_configuracion = {}
-        if username in data_configuracion:
-            self = configuracion(
-                data_configuracion[self.username]["textos"],
-                data_configuracion[self.username]["cant_casillas"],
-                data_configuracion[self.username]["coincidencias"],
-                data_configuracion[self.username]["tiempo"],
-                data_configuracion[self.username]["estilo"],
-                data_configuracion[self.username]["tipo_elementos"],
-                data_configuracion[self.username]["ayudas"]
-                )
-        return self
+        conf = {
+            "textos": self.textos,
+            "cant_casillas": self.cant_casillas,
+            "coincidencias": self.coincidencias,
+            "tiempo": self.tiempo,
+            "estilo": self.estilo,
+            "tipo_elementos": self.tipo_elementos,
+            "ayudas": self.ayudas
+        }
+        return conf
     
     def setConfig(self,conf):
         """Esta función setea las variables de clase con lo recibido en los parámetros"""
@@ -83,7 +88,7 @@ class configuracion():
         self.estilo = conf.estilo
         self.tipo_elementos = conf.tipo_elementos
         self.ayudas = conf.ayudas
-        # self = conf
+
     def imprimirConfig(self):
         """Esta función imprime los valores de las variables de clase"""
         print(self.cant_casillas)

@@ -10,8 +10,8 @@ def start(user, nivel):
     window.close()
 
 def loop(user, nivel):
-    conf = user.buscarConfig(user.username)
-    cant_btn = int(conf.cant_casillas[nivel].split('x')[0])
+    conf = user.configActual()
+    cant_btn = int(conf["cant_casillas"][nivel].split('x')[0])
     cant_ayudas = 5
     total_ayudas = cant_ayudas
 

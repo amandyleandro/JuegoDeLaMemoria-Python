@@ -4,7 +4,7 @@ from src.windows import Utilidades as u
 
 def build(conf):
 
-    frame_1 = [[sg.Text(conf.textos["Comienzo"], key="-TXT_ACTUAL-", background_color="#536162", font=("verdana", 12), s=(15,4))]]
+    frame_1 = [[sg.Text(conf["textos"]["Comienzo"], key="-TXT_ACTUAL-", background_color="#536162", font=("verdana", 12), s=(15,4))]]
     col_1 = [[sg.Frame("Texto actual", frame_1, font=("Verdana",11), background_color="#536162" )]]
     
     frame_2 = [[sg.Combo(["Comienzo","Gano","Perdio","Quedan 30 segundos"], default_value = "Comienzo", font=("Verdana"), key = '-TEXTOS-')],
